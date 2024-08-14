@@ -92,7 +92,7 @@ export default function MAHeader() {
         <AiOutlineArrowDown className="md:hidden" onClick={() => setSearchInSm(false)}/>
       )}
 
-      <div className=" flex gap-2 md:order-2">
+      <div className="">
         
         {currentUser ? (
           <Dropdown
