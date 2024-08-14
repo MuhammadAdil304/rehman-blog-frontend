@@ -98,7 +98,7 @@ export default function MAHeader() {
           color="gray"
           onClick={() => dispatch(toggleTheme())}
         >
-          {theme === "light" ? <FaSun /> : <FaMoon />}
+          {theme === "light" ? "" : ""}
         </Button>
         {currentUser ? (
           <Dropdown
