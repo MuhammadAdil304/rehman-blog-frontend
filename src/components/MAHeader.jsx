@@ -92,14 +92,8 @@ export default function MAHeader() {
         <AiOutlineArrowDown className="md:hidden" onClick={() => setSearchInSm(false)}/>
       )}
 
-      <div className="flex gap-2 md:order-2 hidden">
-        <Button
-          className="w-12 h-10 hidden sm:block"
-          color="gray"
-          onClick={() => dispatch(toggleTheme())}
-        >
-          {theme === "light" ? "" : ""}
-        </Button>
+      <div className=" flex gap-2 md:order-2">
+        
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
