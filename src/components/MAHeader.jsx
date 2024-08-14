@@ -21,7 +21,7 @@ export default function MAHeader() {
 
   const handleSignOut = () => {
     axios
-      .post("http://localhost:3000/api/user/signOut")
+      .post("https://rehman-blog-backend.vercel.app/api/user/signOut")
       .then((res) => {
         if (res?.data?.isSuccessfull == true) {
           dispatch(signOutSuccess());

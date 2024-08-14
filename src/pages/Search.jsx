@@ -36,7 +36,7 @@ export default function Search() {
       setLoading(true);
       const searchQuery = urlParams.toString();
       axios
-        .get(`http://localhost:3000/api/post/getPosts?${searchQuery}`)
+        .get(`https://rehman-blog-backend.vercel.app/api/post/getPosts?${searchQuery}`)
         .then((res) => {
           if (res.data?.isSuccessfull) {
             console.log(res);
@@ -91,7 +91,7 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search)
     urlParams.set("startIndex", startIndex)
     const searchQuery = urlParams.toString()
-    axios.get(`http://localhost:3000/api/post/getPosts?${searchQuery}`)
+    axios.get(`https://rehman-blog-backend.vercel.app/api/post/getPosts?${searchQuery}`)
     .then((res) => {
       if(res.data?.isSuccessfull){
         setPosts([...posts,...res.data?.data?.posts])

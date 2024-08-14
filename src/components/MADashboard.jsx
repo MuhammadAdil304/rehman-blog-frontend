@@ -22,7 +22,7 @@ export default function MADashboard() {
 
   const getUsers = () => {
     axios
-      .get("http://localhost:3000/api/user/getUsers?limit=5")
+      .get("https://rehman-blog-backend.vercel.app/api/user/getUsers?limit=5")
       .then((res) => {
         if (res.data?.isSuccessfull) {
           setUsers([...res.data?.data?.usersWithoutPassword]);
@@ -38,7 +38,7 @@ export default function MADashboard() {
   };
   const getPosts = () => {
     axios
-      .get("http://localhost:3000/api/post/getPosts?limit=5")
+      .get("https://rehman-blog-backend.vercel.app/api/post/getPosts?limit=5")
       .then((res) => {
         if (res.data?.isSuccessfull) {
           setPosts([...res.data?.data?.posts]);

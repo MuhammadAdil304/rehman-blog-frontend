@@ -11,7 +11,7 @@ export default function Post() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:3000/api/post/getPosts?slug=${postSlug}`)
+      .get(`https://rehman-blog-backend.vercel.app/api/post/getPosts?slug=${postSlug}`)
       .then((res) => {
         if (res.data?.isSuccessfull) {
           setPost(res.data?.data?.posts[0]);

@@ -9,7 +9,7 @@ export default function Home() {
 
   const getPosts = () => {
     axios
-      .get("http://localhost:3000/api/post/getPosts")
+      .get("https://rehman-blog-backend.vercel.app/api/post/getPosts")
       .then((res) => {
         if (res.data?.isSuccessfull) {
           setPosts([...res.data?.data?.posts]);

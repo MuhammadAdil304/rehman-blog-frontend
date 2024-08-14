@@ -19,7 +19,7 @@ export default function SignUp() {
     }
     setLoading(true)
     setErrMessage(null)
-    axios.post('http://localhost:3000/api/auth/signup', formData)
+    axios.post('https://rehman-blog-backend.vercel.app/api/auth/signup', formData)
       .then((res) => {
         if (res?.data?.isSuccessfull == true) {
           navigate('/sign-in')

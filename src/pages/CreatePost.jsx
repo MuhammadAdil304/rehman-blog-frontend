@@ -67,7 +67,7 @@ export default function CreatePost() {
     if (currentUser.data?.user?.isAdmin || currentUser.isAdmin) {
       axios
         .post(
-          `http://localhost:3000/api/post/createPost/${currentUser.data?.user?._id}`,
+          `https://rehman-blog-backend.vercel.app/api/post/createPost/${currentUser.data?.user?._id}`,
           formData
         )
         .then((res) => {

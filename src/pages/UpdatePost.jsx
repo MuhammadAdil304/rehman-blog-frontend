@@ -28,7 +28,7 @@ export default function UpdatePost() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/post/getPosts?postId=${params.id}`)
+      .get(`https://rehman-blog-backend.vercel.app/api/post/getPosts?postId=${params.id}`)
       .then((res) => {
         if (res.data?.isSuccessfull) {
           setformData({...res.data?.data?.posts[0]});
@@ -86,7 +86,7 @@ export default function UpdatePost() {
     console.log(formData);
     axios
       .put(
-        `http://localhost:3000/api/post/updatePost/${params.id}`,
+        `https://rehman-blog-backend.vercel.app/api/post/updatePost/${params.id}`,
         formData
       )
       .then((res) => {

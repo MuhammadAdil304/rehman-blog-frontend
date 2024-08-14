@@ -16,7 +16,7 @@ export default function MADashUsers() {
   const getUsers = () => {
     setLoading(true);
     axios
-      .get("http://localhost:3000/api/user/getUsers")
+      .get("https://rehman-blog-backend.vercel.app/api/user/getUsers")
       .then((res) => {
         if (res?.data?.isSuccessfull) {
           setUsers([...res?.data?.data?.usersWithoutPassword]);
@@ -39,7 +39,7 @@ export default function MADashUsers() {
   const handleShowMore = () => {
     const startIndex = users.length;
     axios
-      .get(`http://localhost:3000/api/user/getUsers?startIndex=${startIndex}`)
+      .get(`https://rehman-blog-backend.vercel.app/api/user/getUsers?startIndex=${startIndex}`)
       .then((res) => {
         if (res?.data?.isSuccessfull) {
           setUsers([...users, ...res?.data?.data?.usersWithoutPassword]);
@@ -56,7 +56,7 @@ export default function MADashUsers() {
   const handleDeleteUser = () => {
     setShowModal(false);
     axios
-      .delete(`http://localhost:3000/api/user/deleteUser/${userId}`)
+      .delete(`https://rehman-blog-backend.vercel.app/api/user/deleteUser/${userId}`)
       .then((res) => {
         if (res?.data?.isSuccessfull) {
           setUsers((prev) => prev.filter((user) => user._id !== userId));
@@ -70,7 +70,7 @@ export default function MADashUsers() {
 
   const handleChangeStatus = (id) => {
     axios
-      .put(`http://localhost:3000/api/user/updateStatus/${id}`)
+      .put(`https://rehman-blog-backend.vercel.app/api/user/updateStatus/${id}`)
       .then((res) => {
         if (res?.data?.isSuccessfull) {
           setUsers((prev) =>

@@ -17,7 +17,7 @@ export default function MADashPost() {
   const getPosts = () => {
     setLoading(true);
     axios
-      .get("http://localhost:3000/api/post/getPosts")
+      .get("https://rehman-blog-backend.vercel.app/api/post/getPosts")
       .then((res) => {
         console.log(res);
         if (res?.data?.isSuccessfull) {
@@ -41,7 +41,7 @@ export default function MADashPost() {
     const startIndex = userPosts.length;
     axios
       .get(
-        `http://localhost:3000/api/post/getPosts?userId=${
+        `https://rehman-blog-backend.vercel.app/api/post/getPosts?userId=${
           currentUser.data?.user?._id || currentUser._id
         }&startIndex=${startIndex}`
       )
@@ -61,7 +61,7 @@ export default function MADashPost() {
   const handleDeletePost = () => {
     setShowModal(false);
     axios
-      .delete(`http://localhost:3000/api/post/deletePost/${postId}`)
+      .delete(`https://rehman-blog-backend.vercel.app/api/post/deletePost/${postId}`)
       .then((res) => {
         if (res?.data?.isSuccessfull) {
           setUserPosts((prev) => prev.filter((user) => user._id !== postId));

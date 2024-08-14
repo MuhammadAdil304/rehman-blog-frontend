@@ -8,7 +8,7 @@ export const updateUserStatus = createAsyncThunk(
   async (userId, { dispatch }) => {
     try {
       dispatch(updateUserStatusStart());
-      const response = await axios.put(`http://localhost:3000/api/user/updateStatus/${userId}`);
+      const response = await axios.put(`https://rehman-blog-backend.vercel.app/api/user/updateStatus/${userId}`);
       if (response.data.isSuccessfull) {
         dispatch(updateUserStatusSuccess(response.data.user));
       } else {

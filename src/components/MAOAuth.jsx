@@ -22,7 +22,7 @@ export default function MAOAuth() {
         email: resultsFromGoogle.user.email,
         googlePhotoUrl: resultsFromGoogle.user.photoURL
       }
-      const responce = await axios.post('http://localhost:3000/api/auth/google', userData)
+      const responce = await axios.post('https://rehman-blog-backend.vercel.app/api/auth/google', userData)
       dispatch(signInSuccess(responce.data))
       console.log(responce.data)
       navigate('/')

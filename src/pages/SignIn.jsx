@@ -20,7 +20,7 @@ export default function SignIn() {
       return dispatch(signInFailure('Please Fill Out All Fields'))
     }
     dispatch(signInStart())
-    axios.post('http://localhost:3000/api/auth/signIn', formData)
+    axios.post('https://rehman-blog-backend.vercel.app/api/auth/signIn', formData)
       .then((res) => {
         console.log(res)
         if (res?.data?.isSuccessfull == true) {

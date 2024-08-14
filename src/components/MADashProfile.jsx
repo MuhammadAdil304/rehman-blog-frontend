@@ -98,7 +98,7 @@ export default function MADashProfile() {
       dispatch(updateStart());
       axios
         .put(
-          `http://localhost:3000/api/user/update/${
+          `https://rehman-blog-backend.vercel.app/api/user/update/${
             currentUser.data?.user?._id || currentUser._id
           }`,
           formData
@@ -124,7 +124,7 @@ export default function MADashProfile() {
     dispatch(deleteUserStart());
     axios
       .delete(
-        `http://localhost:3000/api/user/delete/${
+        `https://rehman-blog-backend.vercel.app/api/user/delete/${
           currentUser.data?.user?._id || currentUser._id
         }`
       )
@@ -142,7 +142,7 @@ export default function MADashProfile() {
 
   const handleSignOut = () => {
     axios
-      .post("http://localhost:3000/api/user/signOut")
+      .post("https://rehman-blog-backend.vercel.app/api/user/signOut")
       .then((res) => {
         if (res?.data?.isSuccessfull == true) {
           dispatch(signOutSuccess());
