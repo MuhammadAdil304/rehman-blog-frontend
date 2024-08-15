@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { signInStart, signInFailure, signInSuccess } from '../redux/user/userSlice'
 import axios from 'axios'
-import MAOAuth from '../components/MAOAuth'
 
 export default function SignIn() {
   const [formData, setFormData] = useState({})
@@ -79,7 +78,6 @@ export default function SignIn() {
                 ) : 'Sign In'
               }
             </Button>
-            <MAOAuth/>
           </form>
           <div className='flex gap-2 text-sm mt-5'>
             <span>Dont Have An Account</span>
