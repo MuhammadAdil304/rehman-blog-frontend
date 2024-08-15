@@ -88,12 +88,14 @@ export default function MAHeader() {
         >
           <AiOutlineSearch />
         </Button>
-      ):(
-        <AiOutlineArrowDown className="md:hidden" onClick={() => setSearchInSm(false)}/>
+      ) : (
+        <AiOutlineArrowDown
+          className="md:hidden"
+          onClick={() => setSearchInSm(false)}
+        />
       )}
 
-      <div className="">
-        
+      <div className="flex md:order-2 gap-2">
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
@@ -144,6 +146,7 @@ export default function MAHeader() {
           <Link to="/about">About</Link>
         </Navbar.Link>
       </Navbar.Collapse>
+
       {searchInSm && (
         <form className="w-full mt-2" onSubmit={handleSubmitInSm}>
           <TextInput
